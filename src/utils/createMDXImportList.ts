@@ -6,7 +6,7 @@ import { promisify } from 'util';
 
 export const createMDXImportList = () => {
   const allMDXPaths = getAllMDXPaths();
-  const targetPath = `${join(process.cwd(), 'posts')}/mdx-list.ts`;
+  const targetPath = `${join(process.cwd(), 'src/posts')}/mdx-list.ts`;
   const allImports = allMDXPaths.map((path) => `'${path}': dynamic(() => import('./articles/${path}.mdx'))`).join(',');
 
   const content = `

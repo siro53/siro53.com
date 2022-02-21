@@ -1,12 +1,11 @@
 import * as React from 'react';
 import Head from 'next/head';
-import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import { NextPage } from 'next';
+import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { createTheme } from '@mui/material/styles';
+import { MyAppProps } from '../types/myNextPage';
 
 export const createEmotionCache = () => {
   return createCache({ key: 'css', prepend: true });
@@ -14,15 +13,6 @@ export const createEmotionCache = () => {
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
-
-export type MyNextPage<T = {}> = NextPage<T> & {
-  getLayout?: (page: React.ReactElement) => React.ReactNode;
-};
-
-export type MyAppProps = AppProps & {
-  emotionCache?: EmotionCache;
-  Component: MyNextPage;
-};
 
 export const theme = createTheme({
   palette: {

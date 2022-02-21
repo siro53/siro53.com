@@ -2,12 +2,12 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { MyNextPage } from './_app';
-import { DefaultLayout } from '../core/layouts/DefaultLayout';
+import { DefaultLayout } from '../components/DefaultLayout';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Grid } from '@mui/material';
-import ExternalLink from '../core/components/ExternalLink';
+import ExternalLink from '../components/ExternalLink';
 
 const Home: MyNextPage = () => {
   return (

@@ -1,20 +1,19 @@
-import { Box, Container, Typography } from '@mui/material';
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import React from 'react';
-import Post from '../../../core/components/Post';
-import { DefaultLayout } from '../../../core/layouts/DefaultLayout';
-import { getAllMDXPaths } from '../../../core/utils/myMDX';
-import { MyAppProps, MyNextPage } from '../../_app';
+import { Box, Container } from '@mui/material';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Post from '../../../components/Post';
+import { DefaultLayout } from '../../../components/DefaultLayout';
+import { getAllMDXPaths } from '../../../utils/myMDX';
+import { MyNextPage } from '../../../types/myNextPage';
 
 type PathParams = {
   id: string;
 };
 
-type PageProps = {
+type Props = {
   id: string;
 };
 
-const PostPage: MyNextPage<PageProps> = ({ id }) => {
+const PostPage: MyNextPage<Props> = ({ id }) => {
   return (
     <Container maxWidth='lg'>
       <Box
@@ -48,7 +47,7 @@ export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<PageProps> = async (ctx) => {
+export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const { id } = ctx.params as PathParams;
 
   return {

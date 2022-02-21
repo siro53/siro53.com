@@ -1,18 +1,17 @@
 import { Container, Typography } from '@mui/material';
 import React from 'react';
-import { MDXPosts } from '../../posts/mdx-list';
+import { MDXPosts } from '../posts/mdx-list';
 
 type Props = {
   id: string;
-  title: string;
 };
 
-const Post: React.FC<Props> = ({ id, title }) => {
+const Post: React.FC<Props> = ({ id }) => {
   const MDX = MDXPosts[id];
 
   return (
     <Container maxWidth='lg'>
-      <Typography variant='h1'>{title}</Typography>
+      <Typography variant='h1'>a</Typography>
       <MDX />
     </Container>
   );

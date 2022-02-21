@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { Header } from '../components/Header';
+import { Header } from './Header';
 
 export const DefaultLayout: NextPage = ({ children }) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import { DefaultLayout } from '../../core/layouts/DefaultLayout';
-import { MyNextPage } from '../_app';
+import { DefaultLayout } from '../../components/DefaultLayout';
+import { MyNextPage } from '../../types/myNextPage';
 import { Box, Typography } from '@mui/material';
 
 const About: MyNextPage = () => {

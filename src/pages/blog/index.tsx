@@ -1,6 +1,6 @@
-import { DefaultLayout } from '../../core/layouts/DefaultLayout';
-import { MyNextPage } from '../_app';
+import { DefaultLayout } from '../../components/DefaultLayout';
 import { Box, Container, Typography } from '@mui/material';
+import { MyNextPage } from '../../types/myNextPage';
 
 const Blog: MyNextPage = () => {
   return (

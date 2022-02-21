@@ -12,7 +12,7 @@ const withMDX = require('@next/mdx')({
   },
 });
 
-const createMDXImport = require('./core/utils/scripts/main').createMDXImportList;
+const createMDXImport = require('./src/utils/scripts/main').createMDXImportList;
 createMDXImport();
 
 const nextConfig = {
