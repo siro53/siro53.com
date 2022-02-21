@@ -28,7 +28,7 @@
     "react": "latest",
     "react-dom": "latest",
     "rehype-katex": "3.0.0",
-    "remark-math": "3.0.1",
+    "remark-math": "^4.0.0",
     "ts-node": "^10.5.0"
   },
   "devDependencies": {

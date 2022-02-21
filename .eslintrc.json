@@ -2,7 +2,7 @@
   "extends": ["next/core-web-vitals", "prettier"],
   "overrides": [
     {
-      "files": ["core/**/*.tsx", "src/*.tsx", "src/*.ts"]
+      "files": ["src/*.tsx", "src/*.ts"]
     }
   ]
 }

@@ -5,15 +5,12 @@ const rehypeKatex = require('rehype-katex');
 const remarkMath = require('remark-math');
 
 const withMDX = require('@next/mdx')({
-  extension: /\.(mdx)?$/,
+  extension: /\.(md|mdx)?$/,
   options: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex, rehypePrism],
   },
 });
-
-const createMDXImport = require('./src/utils/scripts/main').createMDXImportList;
-createMDXImport();
 
 const nextConfig = {
   pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
