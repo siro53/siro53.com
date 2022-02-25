@@ -44,8 +44,7 @@ const Blog: MyNextPage<Props> = ({ metaList }) => {
                   primary={title}
                   secondary={date}
                   primaryTypographyProps={{
-                    fontSize: 20,
-                    fontWeight: 700,
+                    variant: 'h2',
                   }}
                 />
               </ListItemButton>

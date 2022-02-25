@@ -47,7 +47,7 @@ export const PostLayout: NextPage<Props> = ({ children, meta }) => {
           <Box component='span' sx={{ p: 1, borderBottom: 1, borderBottomColor: '#9e9e9e' }}>
             <Typography variant='h1'>{meta.title}</Typography>
             {/* TODO: 作成した日時を表示する */}
-            <Box sx={{ pt: 1 }}>2022-2-21</Box>
+            <Box sx={{ pt: 1 }}>{meta.date}</Box>
           </Box>
           {children}
         </Box>
