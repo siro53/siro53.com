@@ -15,6 +15,9 @@ const Diary: MyNextPage = () => {
       }}
     >
       <Typography variant='h2'>coming soon...</Typography>
+      <Box sx={{ mt: 4, justifyContent: 'center', alignItems: 'center' }}>
+        <Typography variant='body1'>(非公開日記の予定地です)</Typography>
+      </Box>
     </Box>
   );
 };
