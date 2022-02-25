@@ -1,42 +1,37 @@
-import { AppBar, Toolbar, Typography, Button, Grid } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
+
+const texts = ['HOME', 'ABOUT', 'BLOG', 'DIARY'];
 
 export const Header: React.FC = () => {
   const router = useRouter();
   return (
     <AppBar position='static'>
       <Toolbar>
-        <Grid container direction='row' justifyContent='flex-end' alignItems='flex-end'>
-          <Grid item xs={1}>
-            <Button variant='text' onClick={() => router.push('/')}>
-              <Typography fontWeight={700} color='primary.contrastText'>
-                Home
-              </Typography>
-            </Button>
-          </Grid>
-          <Grid item xs={1}>
-            <Button variant='text' onClick={() => router.push('/about')}>
-              <Typography fontWeight={700} color='primary.contrastText'>
-                About
-              </Typography>
-            </Button>
-          </Grid>
-          <Grid item xs={1}>
-            <Button variant='text' onClick={() => router.push('/blog')}>
-              <Typography fontWeight={700} color='primary.contrastText'>
-                Blog
-              </Typography>
-            </Button>
-          </Grid>
-          <Grid item xs={1}>
-            <Button variant='text' onClick={() => router.push('/diary')}>
-              <Typography fontWeight={700} color='primary.contrastText'>
-                Diary
-              </Typography>
-            </Button>
-          </Grid>
-        </Grid>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            flexDirection: 'row',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
+          {texts.map((text) => {
+            return (
+              <Button
+                key={text}
+                variant='text'
+                onClick={() => router.push(`/${text.toLowerCase() === 'home' ? '' : text.toLowerCase()}`)}
+              >
+                <Typography color='primary.contrastText' sx={{ p: 1 }}>
+                  {text}
+                </Typography>
+              </Button>
+            );
+          })}
+        </Box>
       </Toolbar>
     </AppBar>
   );
