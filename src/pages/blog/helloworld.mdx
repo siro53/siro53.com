@@ -1,0 +1,101 @@
+import { PostLayout } from '../../components/PostLayout';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+export const meta = {
+  id: 'helloworld',
+  title: 'Next.js + MUI でホームページを作りました',
+  date: '2022-2-25',
+};
+
+<meta property='og:image' content='https://ogi-api.vercel.app/Next.js%20%2B%20MUI%20%E3%81%A7%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F.png?theme=black&md=1&fontSize=75px' />
+
+# 動機
+
+昔から自分のホームページを持つことに憧れを感じていましたが、「でも僕にできるわけ...」という理由からなんとなく避けていました。
+
+...が、最近Web開発のバイトをさせていただく機会があって、「自分でもなんか作ってみたい...そうだ、今ならホームページとか作れるんじゃないか」ということで、作ってみました。
+
+# 使ったライブラリ等
+
+## Next.js
+
+自分のホームページはなるべく重くないサイトにしたいという思いがあり、その願望とマッチしていたのが[Next.js](https://nextjs.org/)でした。
+
+また、実ははじめは[Blitz.js](https://blitzjs.com/)にしようと思っていたのですが、作成にあたってDBは必要なくフロントエンドの実装だけでよいため、Next.jsを使うことにしました。
+
+## MUI
+
+[MUI]()はサイトのUIをデザインするためのライブラリです。
+
+Webデザインには全く詳しくないのですが、お手軽にそれっぽい見た目のサイトを作れて便利です。
+
+注意点ですが、MUIとNext.jsを組み合わせる際には`_app.tsx`と`_document.tsx`をいじる必要があるみたい(よくわかってない)なので、[MUIのリポジトリにあるsample](https://github.com/mui/material-ui/tree/master/examples/nextjs-with-typescript)をクローンしてプロジェクトを作成するのが楽でした。
+
+## fontawesome
+
+[fontawesome](https://fontawesome.com/)は、例えばTwitterの青い鳥のアイコン(<FontAwesomeIcon icon={faTwitter} size='1x' color='#03a9f4' />)を表示させたいときなどに手軽に使えます。
+
+たくさんのアイコンをReactのコンポーネントとして手軽に扱えて便利でした。
+
+## MDX
+
+[MDX](https://mdxjs.com/)はmarkdownの中でJSXを扱うことができるものです。これによって表現の幅が広がるかな...？と思い導入してみることにしました。
+例えば先程のfontawesomeの項は次のようなコードを書いています。
+
+```markdown
+[fontawesome](https://fontawesome.com/)は、例えばTwitterの青い鳥のアイコン
+(<FontAwesomeIcon icon={faTwitter} size='x' color='#03a9f4' />)
+を表示させたいときなどに手軽に使えます。
+
+たくさんのアイコンをReactのコンポーネントとして手軽に扱えて便利でした。
+```
+
+このようにmarkdownの中にコンポーネントを直接書くことが出来ます。
+
+Next.jsにMDXを導入する記事は検索するとたくさんヒットしたので、資料には困りませんでした。
+
+## KaTeX
+
+数式を書けるようにするために導入しました。
+
+## Prism.js
+
+コードのシンタックスハイライトをつけるためのライブラリです。
+
+カラーテーマはあまり種類がありませんが、沢山の言語に対応している点が便利です。
+
+## [extract-mdx-meta](https://github.com/manovotny/extract-mdx-metadata)
+
+`.mdx`からmeta情報(id, titleなど)のみを抽出するのに使用しました。
+
+ビルドする前に、このライブラリを用いて`.mdx`のmeta情報をjsonファイルに変換し、これを用いて記事の一覧などを表示しています。
+
+この工夫により、`pages/`配下に`.mdx`ファイルを作成すれば記事の一覧も自動的に更新されるようにしました。
+
+## vercel
+
+このwebサイトをデプロイするのに使いました。
+
+アカウントを作ってボタンをポチポチするだけで本当に一瞬でデプロイ出来てすげ～という気持ちに
+
+## Cloudflare Register
+
+せっかくなら独自ドメインが欲しいぜ！と思い、ドメインを取得することにしました。
+
+[この記事](https://qiita.com/khayama/items/fdda7884033b519aa1fe)を参考にアカウントを作ってサイトをポチポチしてお金を払ったらすぐ取得できました。
+
+vercelでデプロイしたサイトに独自ドメインを割り当てるのは簡単にできるみたいなのですが、ドメインをvercelに登録してアクセスしようとしたらリダイレクトループになってアクセスできなくなり、少しハマりました...
+
+幸いこれも[記事があった](https://qiita.com/n0bisuke/items/ebdace6abf4423197373)ので、先人の知恵に感謝しながらなんとかデプロイできました。
+
+# 感想
+
+結局やったこととしては既存のライブラリをひたすら組み合わせただけですが、想像以上に苦労しました。
+プログラミングというよりはひたすらパソコンと戦っていたような気がします...
+
+ところでブログを作れるようにしたのはいいのですが、これから記事を書くことはあるのでしょうか...
+
+まだこのサイトには未実装の機能がいくつかありますし、色々直したいものもあるので、引き続きちまちま開発を続けたいと思います。
+
+export default ({ children }) => <PostLayout meta={meta}>{children}</PostLayout>;
