@@ -1,7 +1,7 @@
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { MyNextPage } from './_app';
+import { MyNextPage } from '../types/myNextPage';
 import { DefaultLayout } from '../components/DefaultLayout';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
