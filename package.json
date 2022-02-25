@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "collect-meta": "node ./src/utils/collect-meta.js"
   },
   "dependencies": {
     "@emotion/cache": "latest",
@@ -24,6 +25,8 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@next/mdx": "^12.0.10",
+    "extract-mdx-metadata": "^2.0.0",
+    "fs-extra": "^10.0.1",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
