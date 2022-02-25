@@ -15,6 +15,9 @@ const About: MyNextPage = () => {
       }}
     >
       <Typography variant='h2'>coming soon...</Typography>
+      <Box sx={{ mt: 4, justifyContent: 'center', alignItems: 'center' }}>
+        <Typography variant='body1'>(ポートフォリオの予定地です)</Typography>
+      </Box>
     </Box>
   );
 };
