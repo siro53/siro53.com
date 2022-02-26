@@ -16,6 +16,13 @@ export const PostLayout: NextPage<Props> = ({ children, meta }) => {
       <Head>
         <title>{meta.title}</title>
         <link href='/favicon.ico' rel='icon' />
+        <meta property='og:image' content={meta.ogp} />
+        <meta property='twitter:card' content='summary_large_image' />
+        <meta property='og:url' content= {`${meta.domain}/${meta.type}/${meta.id}`} />
+        <meta property='og:type' content='article' />
+        <meta property='og:title' content={meta.title} /> 
+        <meta property='og:description' content={meta.title}/> 
+        <meta property='og:site_name' content="siro53's page"/>
       </Head>
 
       <Header />
